@@ -5,19 +5,19 @@ const morgan = require('morgan');
 const path = require('path');
 
 const app = express();  
-const port = 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname,"/public/")));
 
 app.get("/",(req,res)=>{
 
-    res.send('Hello bookDEV.co.th');
+    res.send('Hello bookDEV.co.th5GGlawja');
 })
 
-app.listen(port,()=>{
+app.listen(PORT,()=>{
 
-        debug("Listening on port" + chalk.red(" : "+port));
+        debug("Listening on PORT" + chalk.red(" : "+PORT));
 
 })
 
