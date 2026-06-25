@@ -10,9 +10,12 @@ const PORT = process.env.PORT || 4000;
 app.use(morgan('combined'));
 app.use(express.static(path.join(__dirname,"/public/")));
 
+app.set("views","./src/views");
+app.set("view engine","ejs")
+
 app.get("/",(req,res)=>{
 
-    res.send('Hello bookDEV.co.th5GGlawja');
+    res.render('index',{username: 'BOOKZA888+',customers:["kitty ","picachu","doramoneiei"]});
 })
 
 app.listen(PORT,()=>{
